@@ -1,0 +1,25 @@
+{
+  "name": "GenesysTech — Tienda de Electrónicos",
+  "short_name": "GenesysTech",
+  "description": "Tienda de electrónica: laptops, smartphones, gaming y accesorios.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#0a74da",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/11485/11485970.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/11485/11485970.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

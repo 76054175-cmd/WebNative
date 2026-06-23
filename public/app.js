@@ -348,3 +348,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.cart-btn')?.addEventListener('click', showCart);
 });
+
+// Registrar service worker para PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker registrado con scope:', reg.scope);
+        if (reg.waiting) showToast('Nueva versión disponible — recarga la página');
+        reg.addEventListener('updatefound', () => {
+          const newSW = reg.installing;
+          newSW?.addEventListener('statechange', () => {
+            if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+              showToast('Nueva versión instalada — recarga para actualizar');
+            }
+          });
+        });
+      })
+      .catch(err => console.warn('Error registrando Service Worker:', err));
+  });
+}
