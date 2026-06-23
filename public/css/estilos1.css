@@ -1126,3 +1126,59 @@ footer img {
     grid-template-columns: 1fr;
   }
 }
+
+/* NAV fixes: ensure logo, links and right section wrap without overflowing */
+@media (max-width: 900px) {
+  nav {
+    overflow: hidden;
+  }
+
+  .nav-logo {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .nav-logo span {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(100% - 260px);
+  }
+
+  .nav-right {
+    flex: 0 1 auto;
+    min-width: 120px;
+    justify-content: flex-end;
+  }
+
+  .nav-search {
+    max-width: 220px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo span {
+    max-width: 100px;
+    font-size: 13px;
+  }
+
+  .nav-right {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .cart-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
