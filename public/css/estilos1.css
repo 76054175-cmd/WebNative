@@ -603,7 +603,14 @@ footer img {
   }
 
   .nav-links {
-    display: none;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 13px;
+    overflow: auto;
   }
 
   .nav-right {
